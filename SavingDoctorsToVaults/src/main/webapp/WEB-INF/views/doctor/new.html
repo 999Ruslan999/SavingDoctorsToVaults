@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New doctor</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/doctors}" th:object="${doctor}">
+    <label for="lastName">Имя: </label>
+<input type="text" th:field="*{lastName}" id="lastName"/>
+    <br/>
+    <label for="firstSurname">Фамилия: </label>
+    <input type="text" th:field="*{firstSurname}" id="firstSurname"/>
+    <br/>
+    <label for="middleName">Отчество: </label>
+    <input type="text" th:field="*{middleName}" id="middleName"/>
+    <br/>
+    <label for="specialization">Специализация: </label>
+    <input type="text" th:field="*{specialization}" id="specialization"/>
+    <br/>
+    <label for="licenseNumber">Номер Лицензии: </label>
+    <input type="text" th:field="*{licenseNumber}" id="licenseNumber"/>
+    <br/>
+    <label for="telephone">Номер телефона: </label>
+    <input type="text" th:field="*{telephone}" id="telephone"/>
+    <br/>
+    <label for="email">Email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <br/>
+    <label for="address">Адрес: </label>
+    <input type="text" th:field="*{address}" id="address"/>
+    <br/>
+    <label for="experienceYears">Стаж: </label>
+    <input type="text" th:field="*{experienceYears}" id="experienceYears"/>
+    <br/>
+    <label for="workSchedule">Место работы: </label>
+    <input type="text" th:field="*{workSchedule}" id="workSchedule"/>
+    <br/>
+    <label for="consultationFee">Стоимость консультации: </label>
+    <input type="text" th:field="*{consultationFee}" id="consultationFee"/>
+    <br/>
+    <label for="patientList">Пациенты: </label>
+    <input type="text" th:field="*{patientList}" id="patientList"/>
+    <br/>
+    <label for="specializedServices">Специализированные Услуги: </label>
+    <input type="text" th:field="*{specializedServices}" id="specializedServices"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+
+</form>
+</body>
+</html>
