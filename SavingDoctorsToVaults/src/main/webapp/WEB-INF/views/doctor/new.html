@@ -6,43 +6,43 @@
 </head>
 <body>
 <form th:method="POST" th:action="@{/doctors}" th:object="${doctor}">
-    <label for="lastName">Имя: </label>
-<input type="text" th:field="*{lastName}" id="lastName"/>
+    <label for="lastName">Name: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
     <br/>
-    <label for="firstSurname">Фамилия: </label>
+    <label for="firstSurname">Surname: </label>
     <input type="text" th:field="*{firstSurname}" id="firstSurname"/>
     <br/>
-    <label for="middleName">Отчество: </label>
+    <label for="middleName">MiddleName: </label>
     <input type="text" th:field="*{middleName}" id="middleName"/>
     <br/>
-    <label for="specialization">Специализация: </label>
+    <label for="specialization">Specialization: </label>
     <input type="text" th:field="*{specialization}" id="specialization"/>
     <br/>
-    <label for="licenseNumber">Номер Лицензии: </label>
+    <label for="licenseNumber">Number License: </label>
     <input type="text" th:field="*{licenseNumber}" id="licenseNumber"/>
     <br/>
-    <label for="telephone">Номер телефона: </label>
+    <label for="telephone">Number Telephone: </label>
     <input type="text" th:field="*{telephone}" id="telephone"/>
     <br/>
     <label for="email">Email: </label>
     <input type="text" th:field="*{email}" id="email"/>
     <br/>
-    <label for="address">Адрес: </label>
+    <label for="address">Address: </label>
     <input type="text" th:field="*{address}" id="address"/>
     <br/>
-    <label for="experienceYears">Стаж: </label>
+    <label for="experienceYears">Experience Years: </label>
     <input type="text" th:field="*{experienceYears}" id="experienceYears"/>
     <br/>
-    <label for="workSchedule">Место работы: </label>
+    <label for="workSchedule">Work Schedule: </label>
     <input type="text" th:field="*{workSchedule}" id="workSchedule"/>
     <br/>
-    <label for="consultationFee">Стоимость консультации: </label>
+    <label for="consultationFee">Consultation Fee: </label>
     <input type="text" th:field="*{consultationFee}" id="consultationFee"/>
     <br/>
-    <label for="patientList">Пациенты: </label>
+    <label for="patientList">List of patients: </label>
     <input type="text" th:field="*{patientList}" id="patientList"/>
     <br/>
-    <label for="specializedServices">Специализированные Услуги: </label>
+    <label for="specializedServices">Specialized Services: </label>
     <input type="text" th:field="*{specializedServices}" id="specializedServices"/>
     <br/>
     <input type="submit" value="Create!"/>

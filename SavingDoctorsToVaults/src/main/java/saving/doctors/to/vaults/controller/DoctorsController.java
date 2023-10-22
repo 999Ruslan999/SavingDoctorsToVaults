@@ -1,6 +1,6 @@
 package saving.doctors.to.vaults.controller;
 
-import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import saving.doctors.to.vaults.dao.DoctorDAO;
 import saving.doctors.to.vaults.model.Doctor;
+
+import javax.validation.Valid;
 
 
 @Controller
@@ -27,28 +29,26 @@ public class DoctorsController {
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("doctors", doctorDAO.index());
-        return "doctors/index";
+        return "doctor/index";
     }
 
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("doctor", doctorDAO.show(id));
-        return "doctors/show";
+        return "doctor/show";
     }
 
 
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("doctor") Doctor doctor) {
 
-        return "doctors/new";
+        return "doctor/new";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("doctor") @Valid Doctor doctor,
-                         BindingResult bindingResult) {
-        if(bindingResult.hasErrors())
-            return "doctors/new";
+    public String create(@ModelAttribute("doctor") Doctor doctor) {
+
         doctorDAO.save(doctor);
         return "redirect:/doctors";
     }

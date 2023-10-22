@@ -21,12 +21,12 @@ public class DoctorDAO {
 
 
    public List<Doctor> index() {
-       return jdbcTemplate.query("SELECT * FROM Doctor", new BeanPropertyRowMapper<>(Doctor.class) );
+       return jdbcTemplate.query("SELECT * FROM doctors", new BeanPropertyRowMapper<>(Doctor.class) );
    }
 
    public Doctor show(int id) {
 
-      return jdbcTemplate.query("SELECT*FROM Doctor WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Doctor.class))
+      return jdbcTemplate.query("SELECT*FROM doctors WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Doctor.class))
               .stream().findAny().orElse(null);
    }
 
@@ -34,7 +34,7 @@ public class DoctorDAO {
 
 
    public void save(Doctor doctor) {
-     jdbcTemplate.update("INSERT INTO Doctor VALUES(1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+     jdbcTemplate.update("INSERT INTO doctors(lastName, firstSurname, middleName, specialization, licenseNumber, telephone, email, address, experienceYears, workSchedule, consultationFee, patientList, specializedServices) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
              doctor.getLastName(), doctor.getFirstSurname(), doctor.getMiddleName(), doctor.getSpecialization(),
              doctor.getLicenseNumber(), doctor.getTelephone(), doctor.getEmail(), doctor.getAddress(),
              doctor.getExperienceYears(), doctor.getWorkSchedule(), doctor.getConsultationFee(),

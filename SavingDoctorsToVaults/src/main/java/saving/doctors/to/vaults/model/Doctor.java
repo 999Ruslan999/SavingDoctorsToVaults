@@ -11,15 +11,15 @@ public class Doctor {
 
     private String specialization;
 
-    private float licenseNumber;
+    private int licenseNumber;
 
-    private float telephone;
+    private int telephone;
     private String email;
     private String address;
 
     private int experienceYears;
 
-    private int workSchedule;
+    private String workSchedule;
 
     private int consultationFee;
 
@@ -29,8 +29,8 @@ public class Doctor {
 
 
     public Doctor(int id, String lastName, String firstSurname, String middleName,
-                  String specialization, float licenseNumber, float telephone, String email,
-                  String address, int experienceYears, int workSchedule, int consultationFee,
+                  String specialization, int licenseNumber, int telephone, String email,
+                  String address, int experienceYears, String workSchedule, int consultationFee,
                   String patientList, String specializedServices) {
         this.id = id;
         this.lastName = lastName;
@@ -91,19 +91,19 @@ public class Doctor {
         this.specialization = specialization;
     }
 
-    public float getLicenseNumber() {
+    public int getLicenseNumber() {
         return licenseNumber;
     }
 
-    public void setLicenseNumber(float licenseNumber) {
+    public void setLicenseNumber(int licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
 
-    public float getTelephone() {
+    public int getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(float telephone) {
+    public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
 
@@ -131,11 +131,11 @@ public class Doctor {
         this.experienceYears = experienceYears;
     }
 
-    public int getWorkSchedule() {
+    public String getWorkSchedule() {
         return workSchedule;
     }
 
-    public void setWorkSchedule(int workSchedule) {
+    public void setWorkSchedule(String workSchedule) {
         this.workSchedule = workSchedule;
     }
 
